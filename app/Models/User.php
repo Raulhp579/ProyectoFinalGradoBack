@@ -18,9 +18,14 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'name',
+        'nombre',
+        'apellidos',
         'email',
-        'password',
+        'contraseña',
+        'telefono',
+        'direccion',
+        'fecha_alta',
+        'id_subscripcion'
     ];
 
     /**
@@ -29,7 +34,7 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $hidden = [
-        'password',
+        'contraseña',
         'remember_token',
     ];
 
@@ -42,7 +47,12 @@ class User extends Authenticatable
     {
         return [
             'email_verified_at' => 'datetime',
-            'password' => 'hashed',
+            'fecha_alta' =>'date',
+            'contraseña' => 'hashed',
+
         ];
     }
 }
+//public function subscripcion(){
+  //  return $this->belongsTo(Subscripcion::class, 'id_subscripcion');
+//}
