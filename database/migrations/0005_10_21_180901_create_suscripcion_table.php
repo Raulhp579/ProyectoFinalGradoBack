@@ -20,7 +20,7 @@ return new class extends Migration
             $table->timestamps();
 
 
-            $table->foreign("id_tipo")->on("tipo")->references("id");
+            $table->foreign("id_tipo")->on("tipo_suscripcion")->references("id");
         });
     }
 

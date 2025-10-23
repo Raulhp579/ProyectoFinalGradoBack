@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('contrato_producto', function (Blueprint $table) {
+        Schema::create('tipo_suscripcion', function (Blueprint $table) {
             $table->id();
-            $table->double("mensualidad");
-            $table->unsignedBigInteger("id_producto");
-            $table->unsignedBigInteger("id_contrato");
+            $table->string("nombre");
+            $table->double("precio");
+            $table->string("descripcion");
+            $table->string("imagen");
             $table->timestamps();
 
-            $table->foreign("id_contrato")->on("contrato")->references("id");
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('contrato_producto');
+        Schema::dropIfExists('_tipo_suscripcion');
     }
 };

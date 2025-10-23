@@ -52,7 +52,7 @@ class User extends Authenticatable
 
         ];
     }
+    public function subscripcion(){
+    return $this->belongsTo(Suscripcion::class, 'id_subscripcion');
 }
-//public function subscripcion(){
-  //  return $this->belongsTo(Subscripcion::class, 'id_subscripcion');
-//}
+}
