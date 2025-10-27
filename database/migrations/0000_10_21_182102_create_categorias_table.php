@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger("padre_id")->nullable();
             $table->timestamps();
 
-            $table->foreign('padre_id')->references('id')->on('categorias')->onDelete('set null');
+            $table->foreign('padre_id')->references('id')->on('categorias');
         });
     }
 

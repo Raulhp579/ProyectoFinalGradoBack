@@ -26,11 +26,7 @@ class Suscripcion extends Model
         return $this->belongsTo(User::class, 'id_usuario', 'id');
     }
 
-    // N:1 con Contrato
-    public function contrato()
-    {
-        return $this->belongsTo(Contrato::class, 'id_contrato', 'id');
-    }
+
 
     // castear campos
     protected $casts = [

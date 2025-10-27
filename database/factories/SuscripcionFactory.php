@@ -20,10 +20,8 @@ class SuscripcionFactory extends Factory
     public function definition(): array
     {
         return [
-            'id_tipo'     => Tipo::factory(),
-            'id_contrato' => Contrato::factory(),
+            'id_tipo'     => Tipo::all()->random()->id,
             'mensualidad' => $this->faker->randomFloat(2, 5, 199),
-            'id_usuario'  => User::factory(),
         ];
     }
 }

@@ -24,8 +24,8 @@ class DatabaseSeeder extends Seeder
     {
         Categoria::factory(4)->create();
         Tipo::factory(4)->create();
-        Suscripcion::factory(10)->create();
         Producto::factory(100)->create();
+        Suscripcion::factory(10)->create();
         User::factory(20)->create();
         Contrato::factory(20)->create();
         ContratoProducto::factory(10)->create();
