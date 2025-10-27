@@ -10,6 +10,7 @@ class EnvioServicio extends Model
 {
     use HasFactory , SoftDeletes;
     protected $table = 'envio_servicios';
+    protected $primaryKey = "id";
 
     protected $fillable = [
         'nombre',

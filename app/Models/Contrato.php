@@ -27,8 +27,5 @@ class Contrato extends Model
         return $this->belongsTo(User::class,"id_usuario","id");
     }
 
-    public function suscripcion(){
-        return $this->hasOne(Suscripcion::class,"id_contrato","id");
-    }
 
 }

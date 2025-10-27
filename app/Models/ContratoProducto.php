@@ -19,11 +19,12 @@ class ContratoProducto extends Model
         
     ];
 
-    public function productos(){
-        return $this->hasMany(Producto::class, "id_producto","id");
+    public function producto(){
+        return $this->hasOne(Producto::class, "id","id_producto"); /////preguntar a javiP
     }
 
     public function contrato(){
         return $this->belongsTo(Contrato::class,"id_contrato","id");
     }
+
 }

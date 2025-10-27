@@ -19,7 +19,7 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
-    
+
     protected $fillable = [
         'name',
         'apellidos',
@@ -50,12 +50,22 @@ class User extends Authenticatable
     {
         return [
             'email_verified_at' => 'datetime',
-            'fecha_alta' =>'date',
+            'fecha_alta' => 'date',
             'password' => 'hashed',
 
         ];
     }
-    public function subscripcion(){
-    return $this->belongsTo(Suscripcion::class, 'id_subscripcion');
-}
+    public function subscripcion()
+    {
+        return $this->belongsTo(Suscripcion::class, 'id_suscripcion','id');//preguntar
+    }
+
+    public function envios(){
+        return $this->hasMany(EnvioServicio::class, 'id_usuario','id');
+    
+    }
+
+    public function contratos(){
+         return $this->hasMany(Contrato::class, 'id_usuario','id');
+    }
 }
