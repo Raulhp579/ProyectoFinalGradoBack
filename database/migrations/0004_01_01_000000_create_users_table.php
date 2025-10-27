@@ -24,6 +24,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_suscripcion');
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign("id_suscripcion")->on("suscripcion")->references("id");
         });
