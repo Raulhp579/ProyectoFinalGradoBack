@@ -10,17 +10,12 @@ class Categoria extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = 'servicios';
+    protected $table = 'categorias';
+    protected $primaryKey="id";
 
-    protected $fillable = [
-        'id_categoria', 'nombre', 'descripcion',
-        'precio', 'instalacion', 'periodicidad',
-    ];
+    protected $fillable = ['nombre', 'padre_id'];
 
-    protected $casts = [
-        'instalacion' => 'boolean',
-        'precio'      => 'decimal:2',
-    ];
+   
 
 
     //
