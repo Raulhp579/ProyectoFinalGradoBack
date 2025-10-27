@@ -2,9 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\Tipo;
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Contrato;
+use App\Models\Suscripcion;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,5 +24,13 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+
+        User::factory(10)->create();
+        Tipo::factory(5)->create();
+        Contrato::factory(10)->create();
+
+    
+        Suscripcion::factory(3)->create();
     }
 }
