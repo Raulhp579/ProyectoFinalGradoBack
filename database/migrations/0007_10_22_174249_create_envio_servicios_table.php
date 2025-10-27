@@ -22,7 +22,8 @@ return new class extends Migration
                   ->nullOnDelete();              // si borran user -> pone NULL
 
             $table->timestamps();
-
+            $table->softDeletes();
+            
             $table->index('activo');
             $table->index('id_usuario');
         });

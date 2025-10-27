@@ -17,6 +17,7 @@ return new class extends Migration
             $table->double("precio");
             $table->string("descripcion");
             $table->string("imagen")->nullable();
+            $table->softDeletes();
             $table->timestamps();
 
         });

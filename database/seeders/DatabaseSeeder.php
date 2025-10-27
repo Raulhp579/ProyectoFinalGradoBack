@@ -12,6 +12,7 @@ use App\Models\Suscripcion;
 use App\Models\Tipo;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Spatie\Permission\Models\Role;
 
 class DatabaseSeeder extends Seeder
 {
@@ -32,6 +33,8 @@ class DatabaseSeeder extends Seeder
         EnvioServicio::factory(30)->create();
         
         
-
+        ///////////////////////CREACIÓN DE ROLES/////////////////////////////////
+        
+        Role::create(['name'=>'ADMIN']);
     }
 }

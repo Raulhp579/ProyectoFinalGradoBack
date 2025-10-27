@@ -17,6 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger("id_producto");
             $table->unsignedBigInteger("id_contrato");
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign("id_contrato")->on("contrato")->references("id");
             $table->foreign("id_producto")->on("productos")->references("id");

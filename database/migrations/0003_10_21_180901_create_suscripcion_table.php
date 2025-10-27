@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger("id_tipo");
             $table->double("mensualidad");
             $table->timestamps();
-
+            $table->softDeletes();
 
             $table->foreign("id_tipo")->references("id")->on("tipo_suscripcion");
 

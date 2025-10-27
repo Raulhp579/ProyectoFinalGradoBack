@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string("nombre");
             $table->unsignedBigInteger("padre_id")->nullable();
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('padre_id')->references('id')->on('categorias');
         });
