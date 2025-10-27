@@ -3,9 +3,11 @@
 namespace Database\Factories;
 
 use App\Models\Suscripcion;
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Hash;
+
+
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
@@ -33,7 +35,10 @@ class UserFactory extends Factory
             'telefono' =>fake()->phoneNumber(),
             'direccion' => fake()->streetAddress(),
             'fecha_alta' => fake()->date(),
+
             'id_subscripcion' =>Suscripcion::all()->random()->id 
+
+
         ];
     }
 
