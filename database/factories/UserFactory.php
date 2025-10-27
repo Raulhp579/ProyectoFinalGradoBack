@@ -36,7 +36,7 @@ class UserFactory extends Factory
             'direccion' => fake()->streetAddress(),
             'fecha_alta' => fake()->date(),
 
-            'id_subscripcion' =>Suscripcion::all()->random()->id 
+            'id_suscripcion' =>Suscripcion::all()->random()->id 
 
 
         ];

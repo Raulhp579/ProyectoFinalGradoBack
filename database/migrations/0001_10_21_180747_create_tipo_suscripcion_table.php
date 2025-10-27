@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('contrato', function (Blueprint $table) {
+        Schema::create('tipo_suscripcion', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("id_usuario");
-            $table->date("fecha_inicio");
-            $table->date("fecha_fin")->nullable();
+            $table->string("nombre");
+            $table->double("precio");
             $table->string("descripcion");
+            $table->string("imagen")->nullable();
             $table->timestamps();
 
-
-            $table->foreign("id_usuario")->on("users")->references("id");
         });
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('contrato');
+        Schema::dropIfExists('tipo_suscripcion');
     }
 };

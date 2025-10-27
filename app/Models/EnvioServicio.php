@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 
 class EnvioServicio extends Model
 {
+    use HasFactory;
     protected $table = 'envio_servicios';
 
     protected $fillable = [

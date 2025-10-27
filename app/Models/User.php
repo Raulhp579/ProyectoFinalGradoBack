@@ -26,7 +26,7 @@ class User extends Authenticatable
         'telefono',
         'direccion',
         'fecha_alta',
-        'id_subscripcion'
+        'id_suscripcion'
     ];
 
     /**

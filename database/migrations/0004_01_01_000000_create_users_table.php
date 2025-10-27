@@ -21,9 +21,11 @@ return new class extends Migration
             $table->string('telefono');
             $table->string('direccion');
             $table->date('fecha_alta');
-            $table->unsignedBigInteger('id_subscripcion');
+            $table->unsignedBigInteger('id_suscripcion');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign("id_suscripcion")->on("suscripcion")->references("id");
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
