@@ -4,28 +4,31 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, SoftDeletes, HasRoles;
 
     /**
      * The attributes that are mass assignable.
      *
      * @var list<string>
      */
+
     protected $fillable = [
-        'nombre',
+        'name',
         'apellidos',
         'email',
-        'contraseña',
+        'password',
         'telefono',
         'direccion',
         'fecha_alta',
-        'id_subscripcion'
+        'id_suscripcion'
     ];
 
     /**
@@ -34,7 +37,7 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $hidden = [
-        'contraseña',
+        'password',
         'remember_token',
     ];
 
@@ -47,12 +50,22 @@ class User extends Authenticatable
     {
         return [
             'email_verified_at' => 'datetime',
-            'fecha_alta' =>'date',
-            'contraseña' => 'hashed',
+            'fecha_alta' => 'date',
+            'password' => 'hashed',
 
         ];
     }
-    public function subscripcion(){
-    return $this->belongsTo(Suscripcion::class, 'id_subscripcion');
-}
+    public function subscripcion()
+    {
+        return $this->belongsTo(Suscripcion::class, 'id_suscripcion','id');//preguntar
+    }
+
+    public function envios(){
+        return $this->hasMany(EnvioServicio::class, 'id_usuario','id');
+    
+    }
+
+    public function contratos(){
+         return $this->hasMany(Contrato::class, 'id_usuario','id');
+    }
 }

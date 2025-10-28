@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Contrato extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
     protected $table ="contrato";
     protected $primaryKey ="id";
 
@@ -26,8 +27,5 @@ class Contrato extends Model
         return $this->belongsTo(User::class,"id_usuario","id");
     }
 
-    public function suscripcion(){
-        return $this->hasOne(Suscripcion::class,"id_contrato","id");
-    }
 
 }

@@ -13,17 +13,20 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
+            $table->string('name');
             $table->string('apellidos');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('contraseña');
+            $table->string('password');
             $table->string('telefono');
             $table->string('direccion');
             $table->date('fecha_alta');
-            $table->unsignedBigInteger('id_subscripcion');
+            $table->unsignedBigInteger('id_suscripcion');
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
+
+            $table->foreign("id_suscripcion")->on("suscripcion")->references("id");
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
