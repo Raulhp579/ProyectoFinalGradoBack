@@ -24,7 +24,7 @@ class envioServicioFactory extends Factory
                 'Entrega internacional',
             ]),
             'tiempo_envio' => fake()->numberBetween(12, 168),
-            'coste-base' => fake()->randomFloat(2, 5, 500),
+            'coste_base' => fake()->randomFloat(2, 5, 500),
             'activo' => $this->faker->boolean(),
             'id_usuario' => User::factory(),
 

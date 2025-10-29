@@ -18,6 +18,7 @@ return new class extends Migration
             $table->date("fecha_fin")->nullable();
             $table->string("descripcion");
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign("id_usuario")->on("users")->references("id");
         });

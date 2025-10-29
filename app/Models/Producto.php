@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Producto extends Model
 {
      use HasFactory, SoftDeletes;
 
     protected $table = 'productos';
-    
+    protected $primaryKey = 'id';
 
     protected $fillable = [
         'id_categoria', 'nombre', 'descripcion', 'espacio',
@@ -25,5 +26,11 @@ class Producto extends Model
         'cantidad'    => 'integer',
     ];
 
-    //
+    public function categoria(){
+        return $this->belongsTo(Categoria::class, "id_categoria", "id");
+    }
+
+    public function contratoProducto(){
+        return $this->belongsTo(ContratoProducto::class, "id_producto", "id");
+    }
 }

@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ContratoProducto extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
     protected $table ="contrato_producto";
     protected $primaryKey ="id";
 
@@ -18,11 +19,12 @@ class ContratoProducto extends Model
         
     ];
 
-    public function productos(){
-        return $this->hasMany(Producto::class, "id_producto","id");
+    public function producto(){
+        return $this->hasOne(Producto::class, "id","id_producto"); /////preguntar a javiP
     }
 
     public function contrato(){
         return $this->belongsTo(Contrato::class,"id_contrato","id");
     }
+
 }

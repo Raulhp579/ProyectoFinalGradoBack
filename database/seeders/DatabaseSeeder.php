@@ -12,6 +12,7 @@ use App\Models\Suscripcion;
 use App\Models\Tipo;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Spatie\Permission\Models\Role;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,14 +25,16 @@ class DatabaseSeeder extends Seeder
     {
         Categoria::factory(4)->create();
         Tipo::factory(4)->create();
-        Suscripcion::factory(10)->create();
         Producto::factory(100)->create();
+        Suscripcion::factory(10)->create();
         User::factory(20)->create();
         Contrato::factory(20)->create();
         ContratoProducto::factory(10)->create();
         EnvioServicio::factory(30)->create();
         
         
-
+        ///////////////////////CREACIÓN DE ROLES/////////////////////////////////
+        
+        Role::create(['name'=>'ADMIN']);
     }
 }
