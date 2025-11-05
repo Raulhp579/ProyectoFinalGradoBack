@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContratoController;
 use App\Http\Controllers\ContratoProductoController;
+use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Contrato;
 use App\Models\ContratoProducto;
@@ -37,3 +38,7 @@ route::get('/contrato_producto',[ContratoProductoController::class, 'getAll'])->
 route::post('/contrato_producto',[ContratoProductoController::class, 'create'])->name('contratoProducto.create');
 route::put('/contrato_producto',[ContratoProductoController::class, 'update'])->name('contratoProducto.update');
 route::delete('/contrato_producto',[ContratoProductoController::class, 'delete'])->name('contratoProducto.delete');
+
+
+/////////////////////////////////RUTAS DE PRODUCTO//////////////////////////////////////////////
+route::get('/producto',[ProductoController::class,'getAll'])->name('Producto.get');
