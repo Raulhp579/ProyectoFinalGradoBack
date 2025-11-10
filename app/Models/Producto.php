@@ -31,6 +31,6 @@ class Producto extends Model
     }
 
     public function contratoProducto(){
-        return $this->belongsTo(ContratoProducto::class, "id_producto", "id");
+        return $this->hasMany(ContratoProducto::class, "id_producto", "id");
     }
 }

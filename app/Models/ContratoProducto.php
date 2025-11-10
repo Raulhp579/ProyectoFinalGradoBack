@@ -20,7 +20,7 @@ class ContratoProducto extends Model
     ];
 
     public function producto(){
-        return $this->hasOne(Producto::class, "id","id_producto"); /////preguntar a javiP
+        return $this->belongsTo(Producto::class,"id_producto","id");
     }
 
     public function contrato(){
