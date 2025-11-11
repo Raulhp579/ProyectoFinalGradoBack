@@ -12,8 +12,8 @@ class ContratoController extends Controller
     //////////////////REGLAS///////////////////////
     public static function validar(){
         $reglas = [
-            'id_usaurio'=>'required|integer|exists:App\Models\User,id',
-            'fecha_inicio'=>'date|required',
+            'id_usuario'=>'required|integer|exists:users,id',
+            'fecha_inicio'=>'date',
             'fecha_fin'=>'date',
             'descripcion'=>'string|max:250'
         ];
@@ -23,7 +23,6 @@ class ContratoController extends Controller
             'id_usuario.integer'=>'El id de usuario debe de ser de tipo usuario',
             'id_usuario.exists'=>'El usuario debe de existir',
             'fecha_inicio.date'=>'la fecha debe de ser de tipo date',
-            'fecha_inicio.required'=>'debes de establecer una fecha de inicio',
             'fecha_fin.date'=>'la fecha debe de ser de tipo date',
             'descripcion.string'=>'la descripcion debe de ser de tipo texto',
             'descripcion.max'=>'la descripcion debe de tener como maximo 250 caracteres'
@@ -47,9 +46,8 @@ class ContratoController extends Controller
             if(isset($request->fecha_fin)){ //->puede ser que sea por defecto null
                 $contrato->fecha_fin = $request->fecha_fin;
             }
-            if(isset($request->descripcion)){ //->puede ser que sea por defecto null
                 $contrato->descripcion = $request->descripcion;
-            }
+
 
             $contrato->save();
             return response()->json(['success'=>'el contrato se ha creado correctamente']);
@@ -58,12 +56,12 @@ class ContratoController extends Controller
                                         'fallo'=>$e->getMessage()]);
         }
 
-    }
+ }
 
-    public function delete(Request $request){ //te envia el id el cliente
+    public function delete(string $id){ //te envia el id el cliente
 
         try{
-            $contrato = Contrato::where('id',$request->id)->first();
+            $contrato = Contrato::where('id',$id)->first();
             if(!$contrato){
                 return response()->json(['fallo'=>'el contrato no se ha podido encontrar']);
             }
@@ -124,8 +122,7 @@ class ContratoController extends Controller
         }
 
         try{
-            $contrato->delete();
-            return response()->json(['success'=>'el contrato se ha borrado correctamente']);
+            return response()->json($contrato);
         }catch(Exception $e){
             return response()->json(['error'=>'el contrato no se ha podido eliminar correctamente',
                                         'fallo'=>$e->getMessage()]);

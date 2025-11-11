@@ -15,7 +15,7 @@ Route::get('/user', function (Request $request) {
 route::get('/contrato', [ContratoController::class, 'getAll'])->name('contrato.get');
 route::post('/contrato', [ContratoController::class, 'create'])->name('contrato.create');
 route::put('/contrato/{id}', [ContratoController::class, 'update'])->name('contrato.update');
-route::delete('/contrato',[ContratoController::class, 'delete'])->name('contrato.delete');
+route::delete('/contrato/{id}',[ContratoController::class, 'delete'])->name('contrato.delete');
 route::get('/contrato/{id}', [ContratoController::class, 'getById'])->name('contrato.getById');
 
 /////////////////////////////////RUTAS CONTRATO PRODUCTO//////////////////////////////
