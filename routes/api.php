@@ -23,7 +23,7 @@ route::get('/contrato/{id}', [ContratoController::class, 'getById'])->name('cont
 route::get('/contrato_producto',[ContratoProductoController::class, 'getAll'])->name('contratoProducto.get');
 route::post('/contrato_producto',[ContratoProductoController::class, 'create'])->name('contratoProducto.create');
 route::put('/contrato_producto/{id}',[ContratoProductoController::class, 'update'])->name('contratoProducto.update');
-route::delete('/contrato_producto',[ContratoProductoController::class, 'delete'])->name('contratoProducto.delete');
+route::delete('/contrato_producto/{id}',[ContratoProductoController::class, 'delete'])->name('contratoProducto.delete');
 route::get('/contrato_producto/{id}',[ContratoProductoController::class, 'getById'])->name('contratoProducto.getById');
 
 

@@ -35,11 +35,11 @@ class ContratoController extends Controller
     public function create(Request $request){
 
         $validacion = Validator::make($request->all(), $this->validar()[0], $this->validar()[1]);
-
-        if($validacion->fails()){
-            return response()->json(["error"=>$validacion->errors()->first()]);
-        }
         try{
+            if($validacion->fails()){
+                return response()->json(["error"=>$validacion->errors()->first()]);
+            }
+
             $contrato = new Contrato();
             $contrato->id_usuario = $request->id_usuario;
             $contrato->fecha_inicio = $request->fecha_inicio;
@@ -82,12 +82,12 @@ class ContratoController extends Controller
         }
 
         $validacion = Validator::make($request->all(), $this->validar()[0], $this->validar()[1]);
-
-        if($validacion->fails()){
-            return response()->json(['error'=>$validacion->errors()->first()]);
-        }
-
         try{
+            if($validacion->fails()){
+                return response()->json(['error'=>$validacion->errors()->first()]);
+            }
+
+
             $contrato->id_usuario = $request->id_usuario;
             $contrato->fecha_inicio = $request->fecha_inicio;
             $contrato->fecha_fin = $request->fecha_fin;
