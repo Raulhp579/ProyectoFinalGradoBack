@@ -81,6 +81,7 @@ class ContratoProductoController extends Controller
             $contratoProducto->id_producto = $request->id_producto;
             $contratoProducto->id_contrato = $request->id_contrato;
             $contratoProducto->save();
+            return response()->json(['success'=>'El contrato se ha actualizado correctamente']);
         }catch(Exception $e){
             return response()->json(["error"=>"El contrato producto no se ha podido actualizar correctamente",
                                         "fallo"=>$e->getMessage()]);
