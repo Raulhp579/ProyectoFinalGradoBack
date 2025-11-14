@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContratoController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ContratoProductoController;
+use App\Http\Controllers\MailController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -26,4 +27,7 @@ route::put('/contrato_producto/{id}',[ContratoProductoController::class, 'update
 route::delete('/contrato_producto/{id}',[ContratoProductoController::class, 'delete'])->name('contratoProducto.delete');
 route::get('/contrato_producto/{id}',[ContratoProductoController::class, 'getById'])->name('contratoProducto.getById');
 
+
+////////////////////////////////////RUTA CORREO//////////////////////////////////////////
+Route::post('/correoEnviar',[MailController::class,'enviarEmail'])->name('correo.enviar');
 
