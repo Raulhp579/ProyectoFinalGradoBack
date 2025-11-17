@@ -9,8 +9,8 @@
         <title>Pricing example · Bootstrap v5.3</title>
         <meta name="theme-color" content="#712cf9">
        @vite([
-    'resources/js/app.js',          // trae Bootstrap + app.css
-    'resources/js/Suscripcion.js',  // trae Suscripcion.css
+    'resources/js/app.js',        
+    'resources/js/Suscripcion.js',  
 ])
     </head>
     <body>
