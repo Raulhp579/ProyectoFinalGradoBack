@@ -1,4 +1,4 @@
-import './bootstrap';          // si necesitas axios, etc.
+import './bootstrap';         
 import '../css/Suscripcion.css';
 
 
