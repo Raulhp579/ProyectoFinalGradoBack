@@ -8,7 +8,10 @@
         <meta name="generator" content="Astro v5.13.2">
         <title>Pricing example · Bootstrap v5.3</title>
         <meta name="theme-color" content="#712cf9">
-       @vite(['resources/js/app.js'])
+       @vite([
+    'resources/js/app.js',          // trae Bootstrap + app.css
+    'resources/js/Suscripcion.js',  // trae Suscripcion.css
+])
     </head>
     <body>
         <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
