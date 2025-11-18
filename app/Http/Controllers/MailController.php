@@ -11,7 +11,6 @@ class MailController extends Controller
 {
     public function enviarEmail(Request $request){
         try{
-            //return response()->json($request);
             Mail::to($request->email)->send(new MailableConfig($request->remitente, $request->asunto, $request->cuerpo));
             return response()->json(["success"=>"correro enviado correctamente"]);
         }catch(Exception $e){

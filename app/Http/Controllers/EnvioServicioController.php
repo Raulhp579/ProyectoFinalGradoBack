@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\EnvioServicio;
+use Exception;
 use Illuminate\Http\Request;
+use App\Models\EnvioServicio;
 
 class EnvioServicioController extends Controller
 {
