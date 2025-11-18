@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\ContratoController;
-use App\Http\Controllers\ContratoProductoController;
-use App\Http\Controllers\ProductoController;
-use App\Http\Controllers\ProfileController;
 use App\Models\Contrato;
 use App\Models\ContratoProducto;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VistasController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ContratoController;
+use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\ContratoProductoController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -40,5 +41,7 @@ route::put('/contrato_producto',[ContratoProductoController::class, 'update'])->
 route::delete('/contrato_producto',[ContratoProductoController::class, 'delete'])->name('contratoProducto.delete');
 
 
-/////////////////////////////////RUTAS DE PRODUCTO//////////////////////////////////////////////
-route::get('/producto',[ProductoController::class,'getAll'])->name('Producto.get');
+
+
+/////////////////////////////////////RUTA A LAS VISTAS///////////////////////////////////////////
+Route::get('/suscripcionVista',[VistasController::class,'SuscripcionVista']);
