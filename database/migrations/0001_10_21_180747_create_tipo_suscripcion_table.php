@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string("imagen")->nullable();
             $table->softDeletes();
             $table->timestamps();
-
+            //crear reseñas
+            //crear informacion adiccional
         });
     }
 

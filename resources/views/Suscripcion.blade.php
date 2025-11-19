@@ -106,20 +106,22 @@
             <h5 class="text-center mt-4">¿Te lo vas a perder?</h5>
 
             <div class="row row-cols-1 row-cols-md-4 mb-3 top mt-5">
+
                 @foreach ($tipos as $tipo)
                     <div class="col">
                         <div class="card mb-4 rounded-3 shadow-sm">
                             <div>
                                 <p>Aqui va la imagen </p>
                             </div>
-                            
+
 
                             <div class="card-body">
                                 <h6 class=6"my-0 fw-normal">{{ $tipo->nombre }}</h6>
                                 <h6 class="card-title pricing-card-title">
                                     {{ $tipo->precio }}€
-                            </h6>
-                                <button type="button" class="w-100 btn btn-lg btn-outline-brown ">Ver información</button>
+                                </h6>
+                                <button type="button" class="w-100 btn btn-lg btn-outline-brown" id="btn-verInfo"">Ver
+                                    información</button>
                             </div>
                         </div>
                     </div>
@@ -127,12 +129,30 @@
 
             </div>
 
-
-            
-
-
-
-            
+            <!-- tarjeta descripcion etc -->
+            <!-- añadir clicks no esta porque faltan campos en la bbdd -->
+            <div class="card text-center">
+                <div class="card-header">
+                    <ul class="nav nav-pills card-header-pills">
+                        <li class="nav-item">
+                            <a class="nav-link"style="color: #8B4513;">Descripcion</a>
+                        </li>
+                        <!-- por añadir ya que falta en bbdd -->
+                        <li class="nav-item">
+                            <a class="nav-link disabled">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">Disabled</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis sint quibusdam cum! Animi dolores
+                        vero dolor error architecto neque saepe quos autem mollitia corrupti porro, inventore, ad, a
+                        iure delectus?</p>
+                    <button type="button" class="w-100 btn btn-lg btn-outline-brown w-auto" id="btn-verInfo">Obtener</button>
+                </div>
+            </div>
 
         </main>
         <footer class="pt-4 my-md-5 pt-md-5 border-top">
