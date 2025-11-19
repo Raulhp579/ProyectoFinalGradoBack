@@ -78,3 +78,14 @@
 .bd-mode-toggle .dropdown-menu .active .bi {
     display: block !important;
 }
+
+
+.btn-outline-brown {
+    color: #8B4513;                /* Marrón a cambiar segun jose*/
+    border-color: #8B4513;
+}
+
+.btn-outline-brown:hover {
+    background-color: #8B4513;
+    color: white;
+}
