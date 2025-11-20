@@ -1,0 +1,41 @@
+.ft {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 400px 320px 320px 320px;
+    font-family: "Poppins";
+}
+
+.ft h4 {
+    color: rgb(152, 149, 149);
+
+}
+
+
+.ft h5 {
+    font-size: medium;
+}
+
+#hr2 {
+    width: 95%;
+}
+
+
+.suscripcion {
+    border: none;
+    border-bottom: 2px solid black;
+    outline: none;
+    font-size: 16px;
+    padding: 5px 0;
+    width: 220px;
+    color: black;
+}
+
+.suscripcion::placeholder {
+    color: grey;
+
+}
+
+.cc {
+    margin-left: 30px;
+}

@@ -94,13 +94,11 @@
             </path>
         </symbol>
     </svg>
-    <div class="container py-3">
-        <header>
-            @include('components.Header')
-        </header>
+
+     @include('components.Header')
+
+    <div class="container py-3 mt-4">
         <main>
-
-
             <h3 class="text-center">Te puedes apuntar a nuestro gym interactivo</h3>
             <h1 class="text-center mt-4">ENSERIO</h1>
             <h5 class="text-center mt-4">¿Te lo vas a perder?</h5>
