@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string("nombre");
             $table->double("precio");
-            $table->string("descripcion");
+            $table->text("descripcion");
             $table->string("imagen")->nullable();
             $table->softDeletes();
             $table->timestamps();
-            //crear reseñas
+            //crear reseñas asociado a usuarios
             //crear informacion adiccional
         });
     }
