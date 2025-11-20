@@ -13,7 +13,7 @@ class EnvioServicio extends Model
     protected $primaryKey = "id";
 
     protected $fillable = [
-        'nombre',
+        //'nombre', no deberia de tener nombre
         'tiempo_envio',
         'coste_base',
         'activo',

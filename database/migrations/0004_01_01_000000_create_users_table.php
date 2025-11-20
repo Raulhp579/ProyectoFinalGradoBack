@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('telefono');
             $table->string('direccion');
             $table->date('fecha_alta');
-            $table->unsignedBigInteger('id_suscripcion');
+            $table->unsignedBigInteger('id_suscripcion')->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

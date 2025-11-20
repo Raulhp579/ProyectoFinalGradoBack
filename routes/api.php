@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContratoController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ContratoProductoController;
+use App\Http\Controllers\EnvioServicioController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\VistasController;
 
 Route::get('/user', function (Request $request) {
@@ -31,6 +33,13 @@ route::get('/contrato_producto/{id}',[ContratoProductoController::class, 'getByI
 
 ////////////////////////////////////RUTA CORREO//////////////////////////////////////////
 Route::post('/correoEnviar',[MailController::class,'enviarEmail'])->name('correo.enviar');
+
+////////////////////////////////////RUTA ENVIOS SERVICIOS/////////////////////////////////
+Route::apiResource('/envio',EnvioServicioController::class);
+
+/////////////////////////////////////RUTA USUARIO/////////////////////////////////////////
+Route::apiResource('/user',UserController::class);
+
 
 /////////////////////////////////////RUTA A LAS VISTAS///////////////////////////////////////////
 Route::get('/suscripcionVista',[VistasController::class,'SuscripcionVista']);

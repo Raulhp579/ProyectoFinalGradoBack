@@ -118,7 +118,7 @@
                                 <h6 class="card-title pricing-card-title">
                                     {{ $tipo->precio }}€
                                 </h6>
-                                <button type="button" class="w-100 btn btn-lg btn-outline-brown" id="btn-verInfo"">Ver
+                                <button type="button" class="w-100 btn btn-lg btn-outline-brown" id="btn-verInfo" value="{{$tipo->id}}">Ver
                                     información</button>
                             </div>
                         </div>
