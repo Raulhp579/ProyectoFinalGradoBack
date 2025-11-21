@@ -15,13 +15,13 @@ class Suscripcion extends Model
 
     protected $fillable = ['id_tipo','id_contrato','mensualidad'];
 
-    // N:1 con Tipo
+
     public function tipo()
     {
         return $this->belongsTo(Tipo::class, 'id_tipo', 'id');
     }
 
-    // N:1 con Usuario (User de Laravel)
+
     public function usuario()
     {
         return $this->hasOne(User::class, 'id_suscripcion', 'id'); //probar cuando se termine usuario

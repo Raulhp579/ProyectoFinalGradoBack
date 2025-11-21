@@ -6,9 +6,9 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\envioServicio>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\EnvioServicio>
  */
-class envioServicioFactory extends Factory
+class EnvioServicioFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,12 +18,12 @@ class envioServicioFactory extends Factory
     public function definition(): array
     {
         return [
-            'nombre' => $this->faker->randomElement([
+            /* 'nombre' => $this->faker->randomElement([
                 'Envío estándar',
                 'Recogida en tienda',
                 'Entrega internacional',
-            ]),
-            'tiempo_envio' => fake()->numberBetween(12, 168),
+            ]), */
+            'tiempo_envio' => fake()->date(),
             'coste_base' => fake()->randomFloat(2, 5, 500),
             'activo' => $this->faker->boolean(),
             'id_usuario' => User::factory(),

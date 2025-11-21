@@ -13,7 +13,7 @@ class EnvioServicio extends Model
     protected $primaryKey = "id";
 
     protected $fillable = [
-        'nombre',
+        //'nombre', no deberia de tener nombre
         'tiempo_envio',
         'coste_base',
         'activo',
@@ -27,6 +27,6 @@ class EnvioServicio extends Model
 
     public function usuario()
     {
-        return $this->belongsTo(User::class, 'id_usuario');
+        return $this->belongsTo(User::class, 'id_usuario','id');
     }
 }

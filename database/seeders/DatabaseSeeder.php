@@ -24,7 +24,8 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         Categoria::factory(4)->create();
-        Tipo::factory(4)->create();
+        $this->call(TiposSeeder::class);
+        //Tipo::factory(4)->create();
         Producto::factory(100)->create();
         Suscripcion::factory(10)->create();
         User::factory(20)->create();

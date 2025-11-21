@@ -1,3 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+    --bs-font-sans-serif: "Times", "Nunito", sans-serif !important;
+}
+
+h1 {
+    font-family: var(--bs-font-sans-serif) !important;
+}
+

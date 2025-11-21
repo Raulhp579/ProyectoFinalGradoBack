@@ -19,13 +19,13 @@ class Tipo extends Model
     ];
 
 
-    // 1 : N  (un Tipo tiene muchas Suscripciones)
+
     public function suscripciones()
     {
      return $this->hasMany(Suscripcion::class, 'id_tipo', 'id');
     }
  
-    // (opcional) castear precio si quieres 2 decimales
+
     protected $casts = [
      'precio' => 'decimal:2',
     ];
