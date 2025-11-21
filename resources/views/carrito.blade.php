@@ -1,9 +1,9 @@
 {{-- Header --}}
-
+@include()
 <section id="carrito">
-    <div>
-        <h1>Carrito</h1>
-    </div>
+
+    <h1>Carrito</h1>
+
 
 
 
