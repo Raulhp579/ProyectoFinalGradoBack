@@ -1,6 +1,6 @@
  <header class="hd">
         @vite(['resources/js/header.js'])
-        <img >
+        <img class="" src="{{ asset('assets/images/LogoMarca.png') }}">
         <h1>RentFit</h1>
 
         <div class="dv_hd">
@@ -13,19 +13,19 @@
         <!-- poner los src -->
         <div class="dv_interacciones">
             <div class="dv_atencion">
-                <button class="btn_atencion"><img></button>
+                <button class="btn_atencion"><img src="{{ asset('assets/images/Atencion.png') }}"></button>
             </div>
 
             <div class="dv_busqueda">
-                <button class="btn_busqueda"><img ></button>
+                <button class="btn_busqueda"><img src="{{ asset('assets/images/Busqueda.png') }}"></button>
             </div>
 
             <div class="dv_fav">
-                <button class="btn_fav"><img ></button>
+                <button class="btn_fav"><img src="{{ asset('assets/images/Favorito.png') }}"></button>
             </div>
 
             <div class="dv_carrito">
-                <button class="btn_carrito"><img ></button>
+                <button class="btn_carrito"><img src="{{ asset('assets/images/Carrito.png') }}"></button>
             </div>
         </div>
 

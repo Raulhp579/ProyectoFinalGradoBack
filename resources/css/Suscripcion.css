@@ -81,11 +81,28 @@
 
 
 .btn-outline-brown {
-    color: #8B4513;                /* Marrón a cambiar segun jose*/
-    border-color: #8B4513;
+    color: #B88E2F;              
+    border-color: #B88E2F;
 }
 
 .btn-outline-brown:hover {
-    background-color: #8B4513;
+    background-color: #B88E2F;
     color: white;
+}
+
+@font-face {
+    font-family:"Bebas_Neue";
+    src: url("fonts/Bebas_Neue/BebasNeue-Regular.woff2") format("woff2"),
+        url("fonts/Bebas_Neue/BebasNeue-Regular.ttf") format("truetype");
+    font-weight: 2000;
+    font-style: normal;
+    font-display: swap;
+}
+
+h2{
+    font-family:"Bebas_Neue" ;
+    font-size: xx-large;
+}
+#xl{
+    font-size: 80px;
 }
