@@ -50,7 +50,7 @@
                         {{-- Ítem de carrito (ejemplo estático, cambia por tu bucle @foreach) --}}
                         <div class="row align-items-center gy-3">
                             <div class="col-md-6 d-flex align-items-center">
-                                <img src="{{ asset('images/products/mancuerna-12-5kg.jpg') }}" alt="Mancuerna 12.5kg"
+                                <img src="{{ asset('../../public/assets/images/Pesas12,5.png') }}" alt="Mancuerna 12.5kg"
                                     class="img-fluid me-3" style="max-width: 80px; border-radius: 8px;">
                                 <div>
                                     <p class="mb-0 fw-semibold small text-muted">Mancuerna 12.5kg</p>
