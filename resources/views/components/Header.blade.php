@@ -6,7 +6,7 @@
         <div class="dv_hd">
             <a href="index.html"><button>Inicio</button></a>
             <a href="producto.html"><button>Productos</button></a>
-            <a href="suscripcion.html"><button>Suscripción</button></a>
+            <a href="{{route('suscripcion.vista')}}"><button>Suscripción</button></a>
             <a href="contacto.html"><button>Contacto</button></a>
         </div>
 
