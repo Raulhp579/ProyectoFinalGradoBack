@@ -2,7 +2,7 @@
     --bs-font-sans-serif: "Times", "Nunito", sans-serif !important;
 }
 
-header {
+h1 {
     font-family: var(--bs-font-sans-serif) !important;
 }
 
