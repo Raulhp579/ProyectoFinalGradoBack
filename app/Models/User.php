@@ -66,6 +66,10 @@ class User extends Authenticatable
     }
 
     public function contratos(){
-         return $this->hasMany(Contrato::class, 'id_usuario','id');
+        return $this->hasMany(Contrato::class, 'id_usuario','id');
+    }
+
+    public function reseñas(){
+        return $this->hasMany(SuscripcionReview::class,'id_usuario','id');
     }
 }
