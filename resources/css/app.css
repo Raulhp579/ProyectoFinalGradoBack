@@ -1,2 +1,8 @@
+:root {
+    --bs-font-sans-serif: "Times", "Nunito", sans-serif !important;
+}
 
+header {
+    font-family: var(--bs-font-sans-serif) !important;
+}
 
