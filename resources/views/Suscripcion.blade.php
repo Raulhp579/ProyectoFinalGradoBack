@@ -95,13 +95,13 @@
         </symbol>
     </svg>
 
-     @include('components.Header')
+    @include('components.Header')
 
     <div class="container py-3 mt-4">
         <main>
-            <h3 class="text-center">Te puedes apuntar a nuestro gym interactivo</h3>
-            <h1 class="text-center mt-4">ENSERIO</h1>
-            <h5 class="text-center mt-4">¿Te lo vas a perder?</h5>
+            <h2 class="text-center ">Te puedes apuntar a nuestro gym interactivo</h2>
+            <h2 class="text-center mt-4 " id="xl">ENSERIO</h2>
+            <h2 class="text-center mt-4 ">¿Te lo vas a perder?</h2>
 
             <div class="row row-cols-1 row-cols-md-4 mb-3 top mt-5">
 
@@ -109,7 +109,8 @@
                     <div class="col">
                         <div class="card mb-4 rounded-3 shadow-sm">
                             <div>
-                                <p>Aqui va la imagen </p>
+                                <img class="card-img-top img-fluid"
+                                    alt="{{ $tipo->nombre }}" src="{{ asset($tipo->imagen) }}">
                             </div>
 
 
@@ -118,7 +119,8 @@
                                 <h6 class="card-title pricing-card-title">
                                     {{ $tipo->precio }}€
                                 </h6>
-                                <button type="button" class="w-100 btn btn-lg btn-outline-brown" id="btn-verInfo" value="{{$tipo->id}}">Ver
+                                <button type="button" class="w-100 btn btn-lg btn-outline-brown" id="btn-verInfo"
+                                    value="{{ $tipo->id }}">Ver
                                     información</button>
                             </div>
                         </div>
@@ -129,11 +131,11 @@
 
             <!-- tarjeta descripcion etc -->
             <!-- añadir clicks no esta porque faltan campos en la bbdd -->
-            <div class="card text-center">
-                <div class="card-header">
-                    <ul class="nav nav-pills card-header-pills">
+            <div class="card text-center ">
+                <div class="card-header ">
+                    <ul class="nav nav-pills card-header-pills justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link"style="color: #8B4513;">Descripcion</a>
+                            <a class="nav-link"style="color: #B88E2F;">Descripcion</a>
                         </li>
                         <!-- por añadir ya que falta en bbdd -->
                         <li class="nav-item">
@@ -148,7 +150,8 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis sint quibusdam cum! Animi dolores
                         vero dolor error architecto neque saepe quos autem mollitia corrupti porro, inventore, ad, a
                         iure delectus?</p>
-                    <button type="button" class="w-100 btn btn-lg btn-outline-brown w-auto" id="btn-verInfo">Obtener</button>
+                    <button type="button" class="w-100 btn btn-lg btn-outline-brown w-auto"
+                        id="btn-verInfo">Obtener</button>
                 </div>
             </div>
 
