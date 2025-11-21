@@ -1,21 +1,4 @@
-@font-face {
-    font-family: "Poppins";
-    src: url("../fonts/Poppins/Poppins-Black.woff2") format("woff2"),
-        url("../fonts/Poppins/Poppins-Black.ttf") format("truetype");
-    font-weight: 2000;
-    font-style: normal;
-    font-display: swap;
-}
 
-
-@font-face {
-    font-family: "Bebas_Neue";
-    src: url("../fonts/Bebas_Neue/BebasNeue-Regular.woff2") format("woff2"),
-        url("../fonts/Bebas_Neue/BebasNeue-Regular.ttf") format("truetype");
-    font-weight: 2000;
-    font-style: normal;
-    font-display: swap;
-}
 
 html {
     overflow-x: hidden
