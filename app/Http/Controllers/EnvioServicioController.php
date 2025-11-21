@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Exception;
 use Illuminate\Http\Request;
 use App\Models\EnvioServicio;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Validator;
 
 class EnvioServicioController extends Controller
 {
-
     public static function validar(){
         $reglas = [
             'tiempo_envio'=>'required|date', //fecha prevista
@@ -31,7 +31,9 @@ class EnvioServicioController extends Controller
 
         return [$reglas,$mensajes];
     }
-
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
         try {
@@ -44,12 +46,12 @@ class EnvioServicioController extends Controller
             ]);
         }
     }
+
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        return response()->json("hola");
         $validar = Validator::make($request->all(),$this->validar()[0],$this->validar()[1]);
 
         if($validar->fails()){
@@ -78,8 +80,11 @@ class EnvioServicioController extends Controller
         }
     }
 
-
-    public function show(string $id) {
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
         try{
             $envio = EnvioServicio::where("id",$id)->first();
             if(!$envio){
@@ -93,9 +98,11 @@ class EnvioServicioController extends Controller
         }
     }
 
+    /**
+     * Update the specified resource in storage.
+     */
     public function update(Request $request, string $id)
     {
-
         $validar = Validator::make($request->all(), $this->validar()[0],$this->validar()[1]);
 
         if($validar->fails()){
@@ -123,7 +130,9 @@ class EnvioServicioController extends Controller
         }
     }
 
-
+    /**
+     * Remove the specified resource from storage.
+     */
     public function destroy(string $id)
     {
         try {
