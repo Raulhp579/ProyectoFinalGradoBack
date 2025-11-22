@@ -7,6 +7,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\VistasController;
 use App\Http\Controllers\ContratoController;
 
+use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\EnvioServicioController;
 use App\Http\Controllers\ContratoProductoController;
 use App\Http\Controllers\SuscripcionReviewController;
@@ -31,6 +33,22 @@ route::post('/contrato_producto',[ContratoProductoController::class, 'create'])-
 route::put('/contrato_producto/{id}',[ContratoProductoController::class, 'update'])->name('contratoProducto.update');
 route::delete('/contrato_producto/{id}',[ContratoProductoController::class, 'delete'])->name('contratoProducto.delete');
 route::get('/contrato_producto/{id}',[ContratoProductoController::class, 'getById'])->name('contratoProducto.getById');
+
+//////////////////////////////////RUTAS PRODUCTO//////////////////////////////////
+
+route::get('/producto', [ProductoController::class, 'getAll'])->name('producto.get');
+route::post('/producto', [ProductoController::class, 'create'])->name('producto.create');
+route::put('/producto/{id}', [ProductoController::class, 'update'])->name('producto.update');
+route::delete('/producto/{id}', [ProductoController::class, 'delete'])->name('producto.delete');
+route::get('/producto/{id}', [ProductoController::class, 'getById'])->name('producto.getById');
+
+//////////////////////////////////RUTAS CATEGORIA//////////////////////////////////
+
+route::get('/categoria', [CategoriaController::class, 'getAll'])->name('categoria.get');
+route::post('/categoria', [CategoriaController::class, 'create'])->name('categoria.create');
+route::put('/categoria/{id}', [CategoriaController::class, 'update'])->name('categoria.update');
+route::delete('/categoria/{id}', [CategoriaController::class, 'delete'])->name('categoria.delete');
+route::get('/categoria/{id}', [CategoriaController::class, 'getById'])->name('categoria.getById');
 
 
 ////////////////////////////////////RUTA CORREO//////////////////////////////////////////
