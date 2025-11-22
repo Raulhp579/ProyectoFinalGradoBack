@@ -9,7 +9,8 @@ use App\Http\Controllers\ContratoController;
 
 use App\Http\Controllers\EnvioServicioController;
 use App\Http\Controllers\ContratoProductoController;
-use App\Models\SuscripcionReview;
+use App\Http\Controllers\SuscripcionReviewController;
+
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -42,7 +43,7 @@ Route::apiResource('/envio',EnvioServicioController::class);
 Route::apiResource('/user',UserController::class);
 
 //////////////////////////////////////RUTA SUSCRIPCIONREVIEW////////////////////////////
-Route::apiResource('/review',SuscripcionReview::class);
+Route::apiResource('/review',SuscripcionReviewController::class);
 
 /////////////////////////////////////RUTA A LAS VISTAS///////////////////////////////////////////
 Route::get('/suscripcionVista',[VistasController::class,'SuscripcionVista']);

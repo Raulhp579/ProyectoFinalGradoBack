@@ -22,8 +22,8 @@ class SuscripcionReviewController extends Controller
             'id_usuario.exists'=>'el usuario debe de existir',
             'id_usuario'=>'el id del usuario debe de ser de tipo numerico',
             'id_tipo.required'=>'el id del tipo es requerido',
-            'id_tipo.exists'=>'el del tipo debe de existir',
-            'id_tipo.numeric'=>'el del tipo debe de ser numerico',
+            'id_tipo.exists'=>'el id del tipo debe de existir',
+            'id_tipo.numeric'=>'el id del tipo debe de ser numerico',
             'review.required'=>'la review es requerida',
             'review.string'=>'la review debe de ser de tipo texto'
         ];
@@ -35,6 +35,7 @@ class SuscripcionReviewController extends Controller
      */
     public function index(Request $request)//se puede buscar por id del tipo
     {
+        
         try{
             
             if(isset($request->tipo)){
