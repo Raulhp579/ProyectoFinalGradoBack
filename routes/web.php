@@ -45,3 +45,4 @@ route::delete('/contrato_producto',[ContratoProductoController::class, 'delete']
 
 /////////////////////////////////////RUTA A LAS VISTAS///////////////////////////////////////////
 Route::get('/suscripcionVista',[VistasController::class,'SuscripcionVista'])->name("suscripcion.vista");
+Route::get('/inicio', [VistasController::class, 'InicioVista'])->name('inicio.vista');
