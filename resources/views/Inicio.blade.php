@@ -185,7 +185,7 @@
         <div class="carrusel-especialidades">
             <div class="carrusel-track">
 
-                {{-- Items (puedes cambiar las imágenes) --}}
+                {{-- Items --}}
                 <div class="carrusel-item">
                     <img src="{{ asset('assets/images/Maquina1.png') }}" alt="Especialidad 1">
                 </div>
