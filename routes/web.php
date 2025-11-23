@@ -9,9 +9,9 @@ use App\Http\Controllers\ContratoController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ContratoProductoController;
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-});
+}); */
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -45,4 +45,4 @@ route::delete('/contrato_producto',[ContratoProductoController::class, 'delete']
 
 /////////////////////////////////////RUTA A LAS VISTAS///////////////////////////////////////////
 Route::get('/suscripcionVista',[VistasController::class,'SuscripcionVista'])->name("suscripcion.vista");
-Route::get('/inicio', [VistasController::class, 'InicioVista'])->name('inicio.vista');
+Route::get('/', [VistasController::class, 'InicioVista'])->name('inicio.vista');
