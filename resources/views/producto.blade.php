@@ -293,7 +293,7 @@
     </section>
     
 </body>
-<hr style="margin: 0">
+<hr style="margin-top: 0">
 @include('components.Footer')
 </html>
 
