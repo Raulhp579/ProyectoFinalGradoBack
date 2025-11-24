@@ -95,32 +95,17 @@
          style="height: 480px; object-fit: cover; object-position: center;">
 
     {{-- BLOQUE TEXTO SUPERPUESTO --}}
-   <div class="position-absolute"
-     style="
-         top: 54%;               /* MÁS ABAJO */
-         left: 78%;              /* MÁS A LA DERECHA */
-         transform: translate(-50%, -50%);
-         background-color: #f6e7cf;
-         padding: 55px 60px;
-         border-radius: 18px;
-         box-shadow: 0 6px 30px rgba(0,0,0,0.35);
-         width: 520px;           /* UN POCO MÁS ANCHO */
-     ">
+  <div class="hero-panel position-absolute">
+    <h1 class="fw-bold mb-3">Descubre nuestra<br>colección</h1>
 
-        <h1 class="fw-bold mb-3" style="font-size: 2.8rem; line-height: 1.2;">
-            Descubre nuestra<br>colección
-        </h1>
+    <p class="mb-4">
+        Equipamiento, suscripciones y servicios de renting para tu gimnasio.
+    </p>
 
-        <p class="mb-4" style="font-size: 1.15rem;">
-            Equipamiento, suscripciones y servicios de renting para tu gimnasio.
-        </p>
-
-        <a href="{{ route('suscripcion.vista') }}" 
-           class="btn btn-dark btn-lg px-4">
-            Ver suscripciones
-        </a>
-
-    </div>
+    <a href="{{ route('suscripcion.vista') }}" class="btn btn-dark btn-lg px-4">
+        Ver suscripciones
+    </a>
+</div>
 
 </section>
             {{-- ================= NOVEDADES PREMIUM ================= --}}

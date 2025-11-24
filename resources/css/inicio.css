@@ -61,3 +61,45 @@
         transform: translateX(-50%);
     }
 }
+.hero-panel {
+    top: 57%;
+    left: 77%;
+    transform: translate(-50%, -50%);
+
+    background-color: #f6e7cf;
+    padding: 3rem 3.5rem;          /* en rem → escala según zoom */
+    border-radius: 18px;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.35);
+
+    height: 75%;
+
+    width: 40%;                    /* cambia con el ancho de pantalla */
+    max-width: 520px;              /* límite para pantallas grandes */
+    min-width: 280px;              /* límite para pantallas pequeñas */
+}
+
+/* Cuando la pantalla es más estrecha → mover panel más a la izquierda */
+@media (max-width: 992px) { /* tablets */
+    .hero-panel {
+        left: 65%;
+        width: 40%;
+    }
+}
+
+@media (max-width: 768px) { /* móviles grandes */
+    .hero-panel {
+        left: 50%;
+        top: 55%;
+        width: 70%;
+        padding: 2rem;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media (max-width: 576px) { /* móviles pequeños */
+    .hero-panel {
+        width: 85%;
+        top: 60%;
+        padding: 1.5rem;
+    }
+}
