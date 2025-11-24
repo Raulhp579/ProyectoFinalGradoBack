@@ -4,6 +4,8 @@ import laravel from "laravel-vite-plugin";
 export default defineConfig({
     plugins: [
         laravel({
+
+
             input: [
                 "resources/css/app.css",
                 "resources/js/app.js",
@@ -13,7 +15,11 @@ export default defineConfig({
                 "resources/js/mail.js",
                 "resources/css/inicio.css",
                 "resources/js/inicio.js",
+                "resources/js/Carrito.js",
+                "resources/js/Producto.js",
+
             ], //añadir segun archivo
+
             refresh: true,
         }),
     ],

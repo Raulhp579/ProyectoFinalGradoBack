@@ -5,7 +5,7 @@
 
         <div class="dv_hd">
             <a href="{{route('inicio.vista')}}"><button>Inicio</button></a>
-            <a href="producto.html"><button>Productos</button></a>
+            <a href="{{route('producto.vista')}}"><button>Productos</button></a>
             <a href="{{route('suscripcion.vista')}}"><button>Suscripción</button></a>
             <a href="contacto.html"><button>Contacto</button></a>
         </div>
@@ -25,7 +25,7 @@
             </div>
 
             <div class="dv_carrito">
-                <button class="btn_carrito"><img src="{{ asset('assets/images/Carrito.png') }}"></button>
+                <button class="btn_carrito"><a href="{{ route("carrito.vista") }}"><img src="{{ asset('assets/images/Carrito.png') }}"></button></a>
             </div>
         </div>
 

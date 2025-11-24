@@ -9,9 +9,9 @@ use App\Http\Controllers\ContratoController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ContratoProductoController;
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-});
+}); */
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -22,6 +22,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
 
 require __DIR__.'/auth.php';
 
@@ -44,5 +45,11 @@ route::delete('/contrato_producto',[ContratoProductoController::class, 'delete']
 
 
 /////////////////////////////////////RUTA A LAS VISTAS///////////////////////////////////////////
+
+Route::get('/suscripcionVista',[VistasController::class,'SuscripcionVista']);
+Route::get('/carrito',[VistasController::class,'CarritoVista'])->name("carrito.vista");
+Route::get('/producto',[VistasController::class,'ProductoVista'])->name("producto.vista");
+
 Route::get('/suscripcionVista',[VistasController::class,'SuscripcionVista'])->name("suscripcion.vista");
-Route::get('/inicio', [VistasController::class, 'InicioVista'])->name('inicio.vista');
+Route::get('/', [VistasController::class, 'InicioVista'])->name('inicio.vista');
+

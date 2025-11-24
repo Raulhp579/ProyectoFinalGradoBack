@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MailController;
@@ -14,9 +15,11 @@ use App\Http\Controllers\ContratoProductoController;
 use App\Http\Controllers\SuscripcionReviewController;
 
 
+
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
+
 
 //////////////////////////////////RUTAS DE CONTRATO//////////////////////////////////
 
