@@ -14,7 +14,12 @@ class VistasController extends Controller
 
 
     public function CarritoVista(){
-        $productos = Producto::whereBetween("id",[1,5]);
-        return view("carrito",["productos" =>$productos]);
+       
+        return view("carrito");
+    }
+
+    public function ProductoVista(){
+       
+        return view("producto");
     }
 }

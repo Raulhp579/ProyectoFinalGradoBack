@@ -46,3 +46,5 @@ route::delete('/contrato_producto',[ContratoProductoController::class, 'delete']
 
 /////////////////////////////////////RUTA A LAS VISTAS///////////////////////////////////////////
 Route::get('/suscripcionVista',[VistasController::class,'SuscripcionVista']);
+Route::get('/carrito',[VistasController::class,'CarritoVista']);
+Route::get('/producto',[VistasController::class,'ProductoVista']);

@@ -1,29 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    @vite(['resources/js/app.js', 'resources/js/Carrito.js'])
+</head>
 {{-- Header --}}
 @include('components.Header')
-{{-- resources/views/carrito.blade.php --}}
-@extends('layouts.app') {{-- Cambia esto si tu layout se llama distinto --}}
 
-@section('content')
+<body>
     {{-- Hero / Cabecera de página --}}
     <section class="position-relative">
         <div class="w-100"
             style="
-                background: url('{{ asset('images/banners/cart-banner.jpg') }}') center center / cover no-repeat;
-                min-height: 230px;
+                background: url('{{ asset('assets/images/HeroCarrito.png') }}') center center / cover no-repeat;
+                min-height: 280px;
             ">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12 text-center text-white">
-                        <h1 class="display-4 fw-bold mb-2">Carrito</h1>
+                        <h1 class="display-4 fw-bold mb-2"></h1>
                         <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb justify-content-center mb-0">
-                                <li class="breadcrumb-item">
-                                    <a href="{{ route('home') }}" class="text-decoration-none text-white-50">Inicio</a>
-                                </li>
-                                <li class="breadcrumb-item active text-white" aria-current="page">
-                                    Carrito
-                                </li>
-                            </ol>
+                          
                         </nav>
                     </div>
                 </div>
@@ -50,8 +51,8 @@
                         {{-- Ítem de carrito (ejemplo estático, cambia por tu bucle @foreach) --}}
                         <div class="row align-items-center gy-3">
                             <div class="col-md-6 d-flex align-items-center">
-                                <img src="{{ asset('../../public/assets/images/Pesas12,5.png') }}" alt="Mancuerna 12.5kg"
-                                    class="img-fluid me-3" style="max-width: 80px; border-radius: 8px;">
+                                <img src="{{asset("assets/images/Pesas12,5.png")  }}" alt="Mancuerna 12.5kg" class="img-fluid me-3"
+                                    style="max-width: 80px; border-radius: 8px;">
                                 <div>
                                     <p class="mb-0 fw-semibold small text-muted">Mancuerna 12.5kg</p>
                                     <p class="mb-0 small text-muted">2,99€/mes</p>
@@ -87,7 +88,7 @@
 
                         <div class="d-flex justify-content-between align-items-center mb-4">
                             <span class="fw-semibold">Total</span>
-                            <span class="fw-bold text-warning fs-5">2,99€/mes</span>
+                            <span class="fw-bold fs-5" style="color:#B88E2F">2,99€/mes</span>
                         </div>
 
                         <button class="btn btn-dark w-100 py-2">
@@ -101,7 +102,7 @@
     </section>
 
     {{-- Banda de ventajas --}}
-    <section class="py-4 bg-white border-top">
+    <section class="py-4 border-top" style="background-color:rgb(246, 232, 215)">
         <div class="container">
             <div class="row text-center gy-4">
 
@@ -140,4 +141,10 @@
             </div>
         </div>
     </section>
-@endsection
+
+</body>
+<hr style="margin: 0">
+
+@include('components.Footer')
+
+</html>
