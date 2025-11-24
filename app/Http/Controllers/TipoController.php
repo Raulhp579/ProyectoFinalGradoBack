@@ -33,9 +33,9 @@ class TipoController extends Controller
 
             $tipo->save();
 
-            return response()->json("Se ha creado el tipo correctamente");
+            return response()->json('Se ha creado el tipo correctamente');
         } catch (Exception $e) {
-            return response()->json("NO se ha creado el tipo correctamente".$e->getMessage());
+            return response()->json('NO se ha creado el tipo correctamente'.$e->getMessage());
         }
 
     }
@@ -55,22 +55,24 @@ class TipoController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $tipo = Tipo::whereId($id)->first();
         try {
-            $tipo = Tipo::whereId($id)->first();
+            if (!$tipo) {
+                return response()->json(['error' => 'El tipo no se ha encontrado']);
+            }
+            
 
-            $tipo->{$request->cambioN} = $tipo->cambioNombre;
-            $tipo->{$request->cambioP} = $tipo->cambioPrecio;
-            $tipo->{$request->cambioDesc} = $tipo->cambioDescripcion;
-            $tipo->{$request->cambioIma} = $tipo->cambioImagen;
+            $tipo->nombre = $request->nombre;
+            $tipo->precio = $request->precio;
+            $tipo->descripcion = $request->descripcion;
+            $tipo->imagen = $request->imagen;
 
             $tipo->save();
 
-            return response()->json("Se ha actualizado el tipo correctamente");
+            return response()->json('Se ha actualizado el tipo correctamente');
         } catch (Exception $e) {
-            return response()->json("NO se ha actualizado el tipo correctamente".$e->getMessage());
+            return response()->json('NO se ha actualizado el tipo correctamente'.$e->getMessage());
         }
-        
-
 
     }
 
@@ -79,16 +81,19 @@ class TipoController extends Controller
      */
     public function destroy(string $id)
     {
+        $tipo = Tipo::whereId($id)->first();
         try {
-            $tipo = Tipo::whereId($id)->first();
+            if (!$tipo) {
+                return response()->json(['error' => 'El tipo no se ha encontrado']);
+            }
+            
 
             $tipo->delete();
-            
-            return response()->json("Se ha borrado el tipo correctamente");
+
+            return response()->json('Se ha borrado el tipo correctamente');
         } catch (Exception $e) {
-            return response()->json("NO se ha borrado el tipo correctamente".$e->getMessage());
+            return response()->json('NO se ha borrado el tipo correctamente'.$e->getMessage());
         }
-      
 
     }
 }

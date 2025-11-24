@@ -54,11 +54,15 @@ class SuscripcionController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $suscripcion = Suscripcion::whereId($id)->first();
         try {
-            $suscripcion = Suscripcion::whereId($id)->first();
+            if (!$suscripcion) {
+                return response()->json(['error' => 'La suscripcion no se ha encontrado']);
+            }
+            
 
-            $suscripcion->{$request->cambioId} = $suscripcion->cambioIdTipo;
-            $suscripcion->{$request->cambioM} = $suscripcion->cambioMensualidad;
+            $suscripcion->idTipo = $request->idTipo;
+            $suscripcion->mensualidad= $request->mensualidad;
 
             $suscripcion->save();
 
@@ -74,8 +78,13 @@ class SuscripcionController extends Controller
      */
     public function destroy(string $id)
     {
+        $suscripcion = Suscripcion::whereId($id)->first();
         try {
-            $suscripcion = Suscripcion::whereId($id)->first();
+            if (!$suscripcion) {
+                return response()->json(['error' => 'La suscripcion no se ha encontrado']);
+            }
+            
+           
 
             $suscripcion->delete();
             return response()->json("Se ha borrado la suscripcion correctamente");
