@@ -24,6 +24,10 @@ class Tipo extends Model
     {
      return $this->hasMany(Suscripcion::class, 'id_tipo', 'id');
     }
+
+    public function reseñas(){
+        return $this->hasMany(SuscripcionReview::class,'id_tipo','id');
+    }
  
 
     protected $casts = [

@@ -1,0 +1,63 @@
+/* Imágenes iguales y recortadas correctamente */
+.novedades-img {
+    height: 220px;
+    object-fit: contain;
+    background-color: white;
+    padding: 10px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Tarjetas premium */
+.novedades-card {
+    border-radius: 12px;
+    border: none;
+    overflow: hidden;
+    transition: all 0.25s ease;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* Hover elegante */
+.novedades-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.18);
+}
+/* CONTENEDOR DEL CARRUSEL */
+.carrusel-especialidades {
+    overflow: hidden;
+    position: relative;
+}
+
+/* PISTA QUE SE MUEVE */
+.carrusel-track {
+    display: flex;
+    width: max-content;
+    animation: scroll-especialidades 25s linear infinite;
+}
+
+/* CADA TARJETA/IMAGEN */
+.carrusel-item {
+    flex: 0 0 280px;       /* ancho de cada item */
+    margin: 0 16px;
+}
+
+.carrusel-item img {
+    width: 100%;
+    height: 240px;
+    object-fit: contain;
+    background-color: white;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* ANIMACIÓN INFINITA */
+@keyframes scroll-especialidades {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}

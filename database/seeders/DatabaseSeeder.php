@@ -9,6 +9,7 @@ use App\Models\EnvioServicio;
 use App\Models\Producto;
 use App\Models\User;
 use App\Models\Suscripcion;
+use App\Models\SuscripcionReview;
 use App\Models\Tipo;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -32,7 +33,7 @@ class DatabaseSeeder extends Seeder
         Contrato::factory(20)->create();
         ContratoProducto::factory(10)->create();
         EnvioServicio::factory(30)->create();
-        
+        SuscripcionReview::factory(100)->create();
         
         ///////////////////////CREACIÓN DE ROLES/////////////////////////////////
         

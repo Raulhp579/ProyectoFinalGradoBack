@@ -92,8 +92,7 @@
 
 @font-face {
     font-family:"Bebas_Neue";
-    src: url("fonts/Bebas_Neue/BebasNeue-Regular.woff2") format("woff2"),
-        url("fonts/Bebas_Neue/BebasNeue-Regular.ttf") format("truetype");
+    src: url("/assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf") format("truetype");
     font-weight: 2000;
     font-style: normal;
     font-display: swap;
