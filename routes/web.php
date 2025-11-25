@@ -53,3 +53,9 @@ Route::get('/producto',[VistasController::class,'ProductoVista'])->name("product
 Route::get('/suscripcionVista',[VistasController::class,'SuscripcionVista'])->name("suscripcion.vista");
 Route::get('/', [VistasController::class, 'InicioVista'])->name('inicio.vista');
 
+///////////////////////////////////// RUTA A LOS PRODUCTOS ///////////////////////////////////////////
+
+Route::get('/productos', [ProductoController::class, 'index'])->name('productos.index');
+Route::get('/productos/crear', [ProductoController::class, 'vistaCrear'])->name('productos.create');
+Route::post('/productos', [ProductoController::class, 'storeDesdeVista'])->name('productos.store');
+Route::delete('/productos/{id}', [ProductoController::class, 'destroy'])->name('productos.destroy');

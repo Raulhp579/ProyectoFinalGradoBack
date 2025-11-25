@@ -78,6 +78,55 @@ class ProductoController extends Controller
         }
     }
 
+
+    public function index()
+    {
+        $productos = Producto::all();   // SIN categoría
+        return view("AdministrarProductos", ['productos' => $productos]);
+    }
+
+        // VISTA: mostrar formulario de crear producto
+    public function vistaCrear()
+    {
+        return view('CrearProducto'); // nombre del Blade del formulario
+    }
+
+    // VISTA: guardar producto desde el formulario HTML
+    public function storeDesdeVista(Request $request)
+    {
+        // Validación más simple para la vista
+        $request->validate([
+            'nombre'      => 'required|string|max:255',
+            'precio'      => 'required|numeric|min:0',
+            'cantidad'    => 'required|integer|min:0',
+            'imagen'      => 'nullable|string|max:255',
+            'descripcion' => 'nullable|string',
+        ]);
+
+        // Crear producto nuevo
+        $producto = new Producto();
+        $producto->nombre      = $request->nombre;
+        $producto->descripcion = $request->descripcion;
+        $producto->precio      = $request->precio;
+        $producto->cantidad    = $request->cantidad;
+        $producto->imagen      = $request->imagen;
+
+        // Campos extra que tu tabla tiene pero que NO pides en el formulario:
+        // les ponemos valores por defecto para que no peten.
+        $producto->id_categoria = 1;      // ⚠️ Asegúrate de que existe la categoría 1
+        $producto->instalacion  = false;  // sin instalación por defecto
+        $producto->espacio      = 0;      // 0 m² por defecto
+
+        $producto->save();
+
+        return redirect()
+            ->route('productos.index')
+            ->with('success', 'Producto creado correctamente.');
+    }
+
+    
+
+
     public function delete(Request $request)
     {
         $producto = Producto::where('id', $request->id)->first();
