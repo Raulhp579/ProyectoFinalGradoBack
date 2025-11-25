@@ -7,7 +7,7 @@
             <a href="{{route('inicio.vista')}}"><button>Inicio</button></a>
             <a href="{{route('producto.vista')}}"><button>Productos</button></a>
             <a href="{{route('suscripcion.vista')}}"><button>Suscripción</button></a>
-            <a href="contacto.html"><button>Contacto</button></a>
+            <a href="{{route('productos.index')}}"><button>Contacto</button></a>
         </div>
 
         <!-- poner los src -->
