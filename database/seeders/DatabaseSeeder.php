@@ -7,6 +7,7 @@ use App\Models\Contrato;
 use App\Models\ContratoProducto;
 use App\Models\EnvioServicio;
 use App\Models\Producto;
+use App\Models\ProductoReview;
 use App\Models\User;
 use App\Models\Suscripcion;
 use App\Models\SuscripcionReview;
@@ -34,7 +35,7 @@ class DatabaseSeeder extends Seeder
         ContratoProducto::factory(10)->create();
         EnvioServicio::factory(30)->create();
         SuscripcionReview::factory(100)->create();
-        
+        ProductoReview::factory(30)->create();
         ///////////////////////CREACIÓN DE ROLES/////////////////////////////////
         
         Role::create(['name'=>'ADMIN']);

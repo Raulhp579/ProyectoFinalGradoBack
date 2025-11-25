@@ -33,4 +33,8 @@ class Producto extends Model
     public function contratoProducto(){
         return $this->hasMany(ContratoProducto::class, "id_producto", "id");
     }
+
+    public function reviews(){
+        return $this->hasMany(ProductoReview::class,'id_producto','id');
+    }
 }

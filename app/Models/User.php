@@ -72,4 +72,8 @@ class User extends Authenticatable
     public function reseñas(){
         return $this->hasMany(SuscripcionReview::class,'id_usuario','id');
     }
+
+    public function reviews(){
+        return $this->hasMany(ProductoReview::class,'id_usuario','id');
+    }
 }

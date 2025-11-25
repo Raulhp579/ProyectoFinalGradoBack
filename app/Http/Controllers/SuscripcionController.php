@@ -8,14 +8,34 @@ use Illuminate\Http\Request;
 
 class SuscripcionController extends Controller
 {
+
+    public function validar(){
+        $reglas = [
+            "idTipo" => "required|exists:suscripcion",
+            "mensualidad" => "required|numeric",
+        ];
+
+
+        $mensajes = [
+            "idTipo.require" => "El idTipo es obligatorio",
+            "idTipo.exists" => "El idTipo de la suscripcion debe de existir",
+            "mensualidad.required" => "La mensualidad es obligatoria",
+            "mensualidad.numeric" => "La mensualidad debe de ser un numero", 
+        ];
+        return [$reglas, $mensajes];
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $suscripciones = Suscripcion::all();
-
-        return response()->json($suscripciones);
+        try{
+            $suscripciones = Suscripcion::all();
+            return response()->json($suscripciones);
+        }catch(Exception $e){
+            return response()->json(['error'=>'no se han podido obtener las suscripciones',
+                                        'fallo'=>$e->getMessage()]);
+        }
     }
 
     /**
@@ -30,9 +50,9 @@ class SuscripcionController extends Controller
 
             $suscripcion->save();
 
-            return response()->json('Se ha creado correctamente la suscripción');
+            return response()->json('Se ha creado correctamente la suscripcion');
         } catch (Exception $e) {
-            return response()->json('No se ha creado correctamente la suscripción'.$e->getMessage());
+            return response()->json('No se ha creado correctamente la suscripcion'.$e->getMessage());
         }
 
     }
@@ -54,11 +74,15 @@ class SuscripcionController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $suscripcion = Suscripcion::whereId($id)->first();
         try {
-            $suscripcion = Suscripcion::whereId($id)->first();
+            if (!$suscripcion) {
+                return response()->json(['error' => 'La suscripcion no se ha encontrado']);
+            }
+            
 
-            $suscripcion->{$request->cambioId} = $suscripcion->cambioIdTipo;
-            $suscripcion->{$request->cambioM} = $suscripcion->cambioMensualidad;
+            $suscripcion->idTipo = $request->idTipo;
+            $suscripcion->mensualidad= $request->mensualidad;
 
             $suscripcion->save();
 
@@ -74,8 +98,13 @@ class SuscripcionController extends Controller
      */
     public function destroy(string $id)
     {
+        $suscripcion = Suscripcion::whereId($id)->first();
         try {
-            $suscripcion = Suscripcion::whereId($id)->first();
+            if (!$suscripcion) {
+                return response()->json(['error' => 'La suscripcion no se ha encontrado']);
+            }
+            
+           
 
             $suscripcion->delete();
             return response()->json("Se ha borrado la suscripcion correctamente");
