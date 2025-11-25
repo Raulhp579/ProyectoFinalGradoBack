@@ -12,6 +12,7 @@ use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\EnvioServicioController;
 use App\Http\Controllers\ContratoProductoController;
+use App\Http\Controllers\ProductoReviewController;
 use App\Http\Controllers\SuscripcionReviewController;
 
 
@@ -64,7 +65,10 @@ Route::apiResource('/envio',EnvioServicioController::class);
 Route::apiResource('/user',UserController::class);
 
 //////////////////////////////////////RUTA SUSCRIPCIONREVIEW////////////////////////////
-Route::apiResource('/review',SuscripcionReviewController::class);
+Route::apiResource('/reviewSuscripcion',SuscripcionReviewController::class);
 
 /////////////////////////////////////RUTA A LAS VISTAS///////////////////////////////////////////
 Route::get('/suscripcionVista',[VistasController::class,'SuscripcionVista']);
+
+/////////////////////////////////////RUTA PRODUCTO REVIEW//////////////////////////////////////
+Route::apiResource('/reviewProducto',ProductoReviewController::class);
