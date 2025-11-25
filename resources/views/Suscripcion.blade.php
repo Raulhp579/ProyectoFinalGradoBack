@@ -109,8 +109,8 @@
                     <div class="col">
                         <div class="card mb-4 rounded-3 shadow-sm">
                             <div>
-                                <img class="card-img-top img-fluid"
-                                    alt="{{ $tipo->nombre }}" src="{{ asset($tipo->imagen) }}">
+                                <img class="card-img-top img-fluid" alt="{{ $tipo->nombre }}"
+                                    src="{{ asset($tipo->imagen) }}">
                             </div>
 
 
@@ -156,10 +156,11 @@
             </div>
 
         </main>
-        <footer class="pt-4 my-md-5 pt-md-5 border-top">
-            @include('components.Footer')
-        </footer>
     </div>
+    <footer class="pt-5 my-md-5 pt-md-5 border-top w-100">
+        @include('components.Footer')
+    </footer>
+
 </body>
 
 </html>
