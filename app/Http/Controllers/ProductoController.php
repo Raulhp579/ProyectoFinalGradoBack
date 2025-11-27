@@ -111,9 +111,9 @@ class ProductoController extends Controller
         $producto->cantidad    = $request->cantidad;
         $producto->imagen      = $request->imagen;
 
-        // Campos extra que tu tabla tiene pero que NO pides en el formulario:
+        // 
         // les ponemos valores por defecto para que no peten.
-        $producto->id_categoria = 1;      // ⚠️ Asegúrate de que existe la categoría 1
+        $producto->id_categoria = 1;      //  Asegúrate de que existe la categoría 1
         $producto->instalacion  = false;  // sin instalación por defecto
         $producto->espacio      = 0;      // 0 m² por defecto
 
